@@ -15,7 +15,7 @@ import figlet from "figlet";
 import _ from "lodash";
 import path from "path";
 import dreaded from "./dreaded.js";
-import pk from "@whiskeysockets/baileys";
+import * as pk from "@whiskeysockets/baileys";
 import { exec } from "child_process";
 import GroupEvents from "./events.js";
 const { default: dreadedConnect,
