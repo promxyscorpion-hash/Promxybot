@@ -28,7 +28,6 @@ const { default: dreadedConnect,
   proto,
   getContentType,
 } = pk;
-import pino from "pino";
 import { imageToWebp } from "./lib/dreadexif.js"
 
 import { videoToWebp, writeExifImg, writeExifVid } from './lib/dreadexif.js';
