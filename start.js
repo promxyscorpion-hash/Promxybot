@@ -705,7 +705,7 @@ async function startDreaded() {
             printQRInTerminal: true,
             fireInitQueries: false,
 version: [2, 2413, 1],
-            shouldSyncHistoryMessage: true,
+            shouldSyncHistoryMessage: ({ syncType }) => true,
             downloadHistory: true,
             syncFullHistory: true,
             generateHighQualityLinkPreview: true,
