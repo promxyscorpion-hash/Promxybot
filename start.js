@@ -50,8 +50,7 @@ const PhoneNumber = pkg
 
 // Exporting store for use in other modules
 
-const store = (0, pk.makeInMemoryStore)({
-    logger: pino().child({ level: "silent", stream: "store" }),
+const store = { bind: () => {}, readFromFile: () => {}, writeToFile: () => {}, chats: {}, contacts: {}, messages: {} };
 });
 
 
