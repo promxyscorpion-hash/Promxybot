@@ -28,7 +28,7 @@ const { default: dreadedConnect,
   proto,
   getContentType,
 } = pk;
-import logger_1 from "@whiskeysockets/baileys/lib/Utils/logger.js";
+import pino from "pino";
 import { imageToWebp } from "./lib/dreadexif.js"
 
 import { videoToWebp, writeExifImg, writeExifVid } from './lib/dreadexif.js';
@@ -53,7 +53,7 @@ const PhoneNumber = pkg
 const store = { bind: () => {}, readFromFile: () => {}, writeToFile: () => {}, chats: {}, contacts: {}, messages: {} };
 
 
-const logger = logger_1.default.child({});
+const logger = pino({ level: 'silent' });
 logger.level = 'silent';
 const kali = readFileSync('./dreaded.jpg'); // Using readFileSync directly
 const presence = process.env.WA_PRESENCE || '';
