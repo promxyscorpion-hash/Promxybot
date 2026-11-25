@@ -51,7 +51,6 @@ const PhoneNumber = pkg
 // Exporting store for use in other modules
 
 const store = { bind: () => {}, readFromFile: () => {}, writeToFile: () => {}, chats: {}, contacts: {}, messages: {} };
-});
 
 
 const logger = logger_1.default.child({});
