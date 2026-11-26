@@ -1,5 +1,5 @@
 /* Fortunatus Mokaya */
-
+import express from "express";
 
 
 
@@ -1158,5 +1158,17 @@ client.ev.on("connection.update", async (con) => {
 
   return client;
 }
+
+const app = express();
+
+app.get("/", (req, res) => {
+    res.status(200).send("DREADED-MD is running!");
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server running on port ${PORT}`);
+});
 
 startDreaded();
