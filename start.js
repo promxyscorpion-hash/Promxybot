@@ -734,7 +734,28 @@ version: [2, 2413, 1],
 
         const client = (0, pk.default)(sockOptions);
   store.bind(client.ev);
+client.ev.on("connection.update", (update) => {
+    const { connection, lastDisconnect, qr } = update;
 
+    if (qr) {
+        console.log("WhatsApp QR code received.");
+    }
+
+    if (connection === "connecting") {
+        console.log("WhatsApp is connecting...");
+    }
+
+    if (connection === "open") {
+        console.log("WhatsApp connected successfully!");
+    }
+
+    if (connection === "close") {
+        console.log(
+            "WhatsApp connection closed:",
+            lastDisconnect?.error?.message || "Unknown reason"
+        );
+    }
+});
        
         setInterval(() => { store.writeToFile("store.json"); }, 3000);
 
